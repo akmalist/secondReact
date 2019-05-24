@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { fruits } from './foods';
+import { choice, remove } from './helpers';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const myFruits = fruits;
+const makeChoice = choice;
+const removeFruit = remove;
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+console.log("I'd like one " + makeChoice(myFruits) + ', please');
+console.log('Here you go: ' + makeChoice(myFruits));
+console.log('Delicious! May I have another?');
+removeFruit(myFruits, makeChoice);
+console.log("I'm sorry, we are all out. We have " + myFruits.length + ' left');
