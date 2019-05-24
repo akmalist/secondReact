@@ -1,13 +1,13 @@
 function choice(item) {
-  return Math.floor(Math.random() * item);
+  return item[Math.floor(Math.random() * item.length)];
 }
 
-function remove(items, item) {
-  let index = items.indexOf(item);
-  while (index > -1) {
-    items.splice(item, 1);
-    index = items.indexOf(item);
-  }
+
+function remove(array, element) {
+  const index = array.indexOf(element);
+  array.splice(index, 1);
 }
+ 
+
 
 export { choice, remove };
